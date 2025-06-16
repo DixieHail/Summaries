@@ -9,13 +9,7 @@ const summaries = [
     guest: "Logan Mohtashami",
     host: "Sarah Wheeler",
     source: "https://www.youtube.com/watch?v=ZKS1i9DAjJw",
-    summary: `In this episode, Logan Mohtashami unpacks the current housing and economic landscape as the second half of 2025 approaches. He focuses on the Federal Reserve’s positioning, political tensions surrounding interest rates, inflation trends, and the performance of mortgage purchase application data.
-
-Key Themes:
-• Fed vs. White House tensions over rate direction and inflation narrative
-• Labor market strength preventing Fed cuts despite cooling inflation
-• Continued disinflation and tariff-driven politicization
-• Mortgage purchase application data showing strength amid soft comps`
+    summary: `Logan Mohtashami breaks down the tension between the Fed and the White House over mortgage rates, how inflation data is trending, and what purchase application growth means for housing health in mid-2025.`
   },
   {
     id: "2",
@@ -25,13 +19,7 @@ Key Themes:
     guest: "Logan Mohtashami",
     host: "Sarah Wheeler",
     source: "https://www.youtube.com/watch?v=rYfbiPRTe-c",
-    summary: `Logan Mohtashami presents a data-driven case for why the U.S. housing market is healthier in 2025 compared to prior years. He points to stabilized mortgage rates, improving inventory, and more rational buyer behavior.
-
-Key Themes:
-• Normalization of mortgage rates and reduction in rate shock
-• Inventory recovery easing pressure on buyers
-• Transition to a more stable and sustainable market dynamic
-• Emphasis on reading beyond negative headlines`
+    summary: `Despite recession fears, Logan outlines how rising inventory and stable mortgage rates are returning the market to a more balanced and sustainable footing.`
   }
 ];
 
@@ -39,48 +27,43 @@ export { summaries };
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f9f9f9] text-gray-900 font-sans px-6 py-12">
-      <div className="max-w-5xl mx-auto">
-        <header className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-red-700 mb-3 leading-tight tracking-tight">
-            Housing Market Executive Briefs
-          </h1>
-          <p className="text-lg text-gray-600">
-            Weekly podcast summaries featuring Logan Mohtashami
-          </p>
-        </header>
+    <div className="min-h-screen bg-white text-gray-900 font-sans px-4 py-16">
+      <main className="max-w-2xl mx-auto">
+        <h1 className="text-4xl font-extrabold mb-8 tracking-tight text-red-700">
+          Executive Briefs: HousingWire Daily
+        </h1>
+        <p className="text-gray-500 text-md mb-12">
+          Weekly podcast recaps with Logan Mohtashami. Curated by Isaiah Tabach.
+        </p>
 
-        <div className="grid gap-10">
+        <ul className="space-y-12">
           {summaries.map((summary) => (
-            <article
-              key={summary.id}
-              className="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition"
-            >
+            <li key={summary.id}>
               <h2 className="text-2xl font-semibold text-red-700 mb-1">
                 <Link href={`/${summary.slug}`} className="hover:underline">
                   {summary.title}
                 </Link>
               </h2>
-              <div className="text-sm text-gray-500 mb-4">
+              <p className="text-sm text-gray-500 mb-2">
                 {summary.date} • Guest: {summary.guest} • Host: {summary.host}
-              </div>
-              <p className="text-gray-800 text-[15px] leading-relaxed">
-                {summary.summary.split("\n\n")[0]}...
+              </p>
+              <p className="text-gray-700 text-[15px] leading-relaxed">
+                {summary.summary}
               </p>
               <Link
                 href={`/${summary.slug}`}
-                className="inline-block mt-4 text-sm text-red-600 font-medium hover:underline"
+                className="inline-block mt-3 text-sm text-red-600 font-medium hover:underline"
               >
                 Read full summary ↗
               </Link>
-            </article>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <footer className="text-center text-sm text-gray-400 mt-16">
-          Built by Isaiah Tabach • Powered by HousingWire insights
+        <footer className="mt-24 pt-12 text-sm text-gray-400 border-t">
+          © 2025 Keller Williams Research. All rights reserved.
         </footer>
-      </div>
+      </main>
     </div>
   );
 }
