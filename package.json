@@ -1,5 +1,5 @@
 {
-  "name": "housingwire-summaries",
+  "name": "housingwire-site",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
